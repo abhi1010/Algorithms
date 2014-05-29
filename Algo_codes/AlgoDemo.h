@@ -26,24 +26,25 @@ public:
     }
 };
 
+enum class VectorSequenceType
+{
+    Random,
+    Sorted
+};
 class SortingAlgo
 {
 public:
     SortingAlgo(void);
     ~SortingAlgo(void);
-
-    void fisherYatesShuffle(std::vector<int>& vec);
+    void startBenchmarking();
+    std::vector<int> getVector(const int size, const VectorSequenceType seqType) const;
+    
+protected:
+    void fisherYatesShuffle(std::vector<int>& vec) const;
     void reset();
     
-    void startTesting();
     void testUsingArray(std::vector<int>& arr);
     
     void shuffle();
-    std::vector<int> getArray()
-    {
-        return mArr;
-    }
-private:
-    std::vector<int> mArr;
 };
 

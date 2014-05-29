@@ -18,11 +18,11 @@ int main(int argc, char* argv[])
 {
     /* Sorting Algorithms */
     SortingAlgo algo;
-    algo.startTesting();
+    algo.startBenchmarking();
     
     /* Trees demo */
     BinaryTree binTree;
-    binTree.insert(algo.getArray());
+    binTree.insert(algo.getVector(10, VectorSequenceType::Random));
 
     return 0;
 }

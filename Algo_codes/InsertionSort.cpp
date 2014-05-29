@@ -13,8 +13,7 @@ void InsertionSort::doSort(int* arr, int size)
             // std::swap(arr[insertIndex-1], arr[insertIndex]);// Makes it much slower
             int iSwap             = arr[insertIndex];
             arr[insertIndex]      = arr[insertIndex - 1];
-            arr[insertIndex - 1]  = iSwap;
-            --insertIndex;
+            arr[insertIndex--]  = iSwap;
         }
     }
 }

@@ -230,7 +230,7 @@ void HeapSort_3::buildheap(int array[], int size) {
  
 void HeapSort_3::percolateDown(int array[], int size, int id) {
         int current = id;
-        int max;
+        int max (0);
         while(true) {
                 int left = current*2+1;
                 int right = current*2+2;

@@ -1,13 +1,13 @@
 #include "stdafx.h"
 #include "RadixSort.h"
-#define MAX 20
 #define BASE 10
 
 
 void RadixSort::doSort(int * a, int n)
 {
-    int i, b[MAX], m = a[0], exp = 1;
-
+    int i, m = a[0], exp = 1;
+    int *b = new int[n];
+    
     //Get the greatest value in the array a and assign it to m
     for (i = 1; i < n; i++)
     {
@@ -51,5 +51,6 @@ void RadixSort::doSort(int * a, int n)
         //Multiply exp by the BASE to get the next group of keys
         exp *= BASE;
     }
+    delete []b;
 
 }

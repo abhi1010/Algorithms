@@ -1,11 +1,12 @@
 #pragma once
-#include "algostopwatch.h"
+#include "AlgoStopwatch.h"
+
 class CountingSort :
     public AlgoStopwatch
 {
 public:
     CountingSort(void) : AlgoStopwatch ("CountingSort", "Simple buckets, Simple processing, Memory overhead") {}
-    ~CountingSort(void);
+    ~CountingSort(void){ }
     virtual void doSort(int * str, int size);
 };
 

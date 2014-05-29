@@ -43,21 +43,25 @@ void AlgoStopwatch::benchmarkSort(int* arr, int size)
     for (int i = 0;i < MAX_TIMES; i++)
     {
         int* tmpArray = new int[size];
-        //memcpy(tmpArray, arr, size * sizeof(arr[0]));
+        //memcpy(tmpArray, arr, sizeof(int) * size);
         std::copy (arr, arr + size, tmpArray);
         doSort(tmpArray, size);
-        if (i == MAX_TIMES - 1)
+        /*if (i == MAX_TIMES - 1)
             this->print (tmpArray, size);
+            */
         delete[] tmpArray;
     }
     high_resolution_clock::time_point t2 = high_resolution_clock::now();
     nanoseconds  time_span = duration_cast<nanoseconds>(t2 - t1);
-    std::cout << "It took " << time_span.count() << " nanoseconds." << std::endl << std::endl;
+    
+    std::cout << "It took " << time_span.count() << " nanoseconds." << std::endl ;
+    std::cout << "...... or  " << ((double)time_span.count()/1000000000) << " seconds" << std::endl<< std::endl;
 }
 
 void AlgoStopwatch::benchmarkSort(std::vector<int> arr)
 {
     int *a= new int[arr.size()];
+    memset(a, 0, sizeof(int) * arr.size());
     std::copy (arr.begin(), arr.end(), a);
     benchmarkSort (a, arr.size());
     delete[] a;

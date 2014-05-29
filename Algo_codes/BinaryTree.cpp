@@ -171,7 +171,7 @@ void BinaryTree::printLeaves(int indentSpace, int level, int nodesInThisLevel, c
 void BinaryTree::printPretty(TreeNode *root, int level, int indentSpace, ostream& out) {
     int h = maxHeight(root);
     int nodesInThisLevel = 1;
-
+    
     int branchLen = 2*((int)pow(2.0,h)-1) - (3-level)*(int)pow(2.0,h-1);  // eq of the length of branch for each node of each level
     int nodeSpaceLen = 2 + (level+1)*(int)pow(2.0,h);  // distance between Left neighbor node's Right arm and Right neighbor node's Left arm
     int startLen = branchLen + (3-level) + indentSpace;  // starting space to the first node to print of each level (for the Left most node of each level only)
@@ -214,7 +214,7 @@ void BinaryTree::insert (std::vector<int> arr)
 
 TreeNode* BinaryTree::BFS(int key, TreeNode *node)
 {
-    if (node == NULL) return false;
+    if (node == NULL) return NULL;
 
     std::queue<TreeNode*> q;
     q.push(node);
