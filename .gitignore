@@ -216,3 +216,5 @@ pip-log.txt
 
 #Mr Developer
 .mr.developer.cfg
+Algo_codes/Algo_codes.vcxproj
+Algo_codes/Algo_codes.vcxproj.filters

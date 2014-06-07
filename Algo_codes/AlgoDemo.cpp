@@ -23,7 +23,7 @@ SortingAlgo::~SortingAlgo(void)
 vector<int> SortingAlgo::getVector(const int size, const VectorSequenceType seqType) const
 {
     vector<int> tmpArray;
-    for (unsigned int i = 0; i < size; ++i)
+    for (int i = 0; i < size; ++i)
     {
         tmpArray.push_back((rand() % (size*10)));
     }
@@ -79,12 +79,11 @@ void SortingAlgo::testUsingArray(std::vector<int>& arr)
     RadixSort rdxSort;
     rdxSort.benchmarkSort(arr);
 }
-
+   
 void SortingAlgo::startBenchmarking()
 {
     LOG ("Testing using 10 Random numbers");
     testUsingArray (getVector(10, VectorSequenceType::Random));
-    return;
 
     LOG ("Testing using 10 Sorted numbers");
     testUsingArray (getVector(10, VectorSequenceType::Sorted));
